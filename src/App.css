@@ -1,0 +1,32 @@
+.container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.main-img {
+  width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.share-box {
+  margin-top: 10px;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.btn {
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+}
+
+.fb { background: #1877f2; }  /* Facebook Blue */
+.tw { background: #1da1f2; }  /* Twitter Blue */
+.wa { background: #25d366; }  /* WhatsApp Green */
