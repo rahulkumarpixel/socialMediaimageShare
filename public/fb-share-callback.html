@@ -1,0 +1,32 @@
+<!-- public/fb-share-callback.html -->
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>FB Share Callback</title>
+</head>
+<body>
+  <script>
+    (function () {
+      console.log("FB callback page loaded:", location.href);
+      const params = new URLSearchParams(location.search);
+      const post_id = params.get("post_id");
+      const payload = { shared: !!post_id, post_id: post_id || null };
+      console.log("Callback payload:", payload);
+      try {
+        if (window.opener && !window.opener.closed) {
+          window.opener.postMessage(payload, window.location.origin);
+          console.log("postMessage sent to opener", window.location.origin);
+        } else {
+          console.warn("No opener or opener closed");
+        }
+      } catch (err) {
+        console.error("postMessage error:", err);
+      }
+      // allow a short pause then close
+      setTimeout(() => { try { window.close(); } catch(e) {} }, 300);
+    })();
+  </script>
+  <p>Processing share result…</p>
+</body>
+</html>
