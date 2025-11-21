@@ -3,9 +3,10 @@ import React, { useEffect, useRef, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const APP_ID = "1863404124273847"; // <-- put your App ID here
-const SHARE_PAGE = `${window.location.origin}/shareable.html`; // page we'll share
 const CALLBACK_PATH = "/fb-share-callback.html";
-const REDIRECT_URI = `${window.location.origin}${CALLBACK_PATH}`;
+const SHARE_PAGE = "https://social-mediaimage-share.vercel.app/shareable.html";
+const REDIRECT_URI = "https://social-mediaimage-share.vercel.app/fb-share-callback.html";
+
 
 export default function App() {
   const [message, setMessage] = useState("");
